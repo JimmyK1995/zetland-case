@@ -1,6 +1,6 @@
 'use client'
 // React
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 // Hooks
 import useFetchStories from '@/app/hooks/useFetchStories';
@@ -15,12 +15,16 @@ import { Container } from '@/app/global.styled';
 import { NewsContainer, NewsContent } from './news.styled';
 import { Typography } from '@/app/components/Typography/Typography';
 import { CardFlex } from '@/app/components/Card/card.styled';
+import Footer from '@/app/components/Footer/Footer';
 
 const News: React.FC = () => {
 
   const { stories, featuredStory } = useFetchStories();
 
+  console.log(stories);
+
   return (
+    <>
     <Container>
       <Nav />
       {featuredStory && (
@@ -31,6 +35,7 @@ const News: React.FC = () => {
           score={featuredStory.score}
           date={new Date(featuredStory.timestamp * 1000).toLocaleDateString('en-GB').replace(/\//g, '.')}
           url={featuredStory.url}
+          photo={featuredStory.photoUrl}
         />
       )}
       <NewsContainer>
@@ -54,11 +59,15 @@ const News: React.FC = () => {
               karma={story.karma}
               score={story.score}
               date={new Date(story.timestamp * 1000).toLocaleDateString('en-GB').replace(/\//g, '.')}
-              url={story.url} />
+              url={story.url}
+              photo={story.photoUrl}
+               />
           ))}
         </CardFlex>
       </NewsContainer>
     </Container>
+    <Footer />
+    </>
   )
 }
 

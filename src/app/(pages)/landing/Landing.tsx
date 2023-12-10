@@ -1,6 +1,9 @@
-// Next/React
+// React
 import React from 'react'
+
+// Next
 import Image from 'next/image'
+import Link from 'next/link'
 
 // Components
 import { Typography } from '../../components/Typography/Typography'
@@ -24,7 +27,7 @@ const LandingPage: React.FC = () => {
           and Jest for testing. This project serves as my entry into the challenges or 
           opportunities presented by Zetland</Typography>
           <Flex gap={20} mt={50}>
-          <PrimaryButton>News page</PrimaryButton>
+         <Link href="/news"><PrimaryButton>News page</PrimaryButton></Link>
           <TransparentButton>Prototype extra</TransparentButton>
           </Flex>
         </HeaderContent>

@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 
 // Utils
-import { extractKeywordsSpacy } from "../utils/keywordExtractor";
+import { extractKeywords } from "../utils/keywordExtractor";
+import fetchStockPhotos from "../utils/fetchPexels";
 
 
 interface types {
@@ -13,6 +14,7 @@ interface types {
     score: number;
     author: string;
     karma: number;
+    photoUrl: string
 }
 
 const useFetchStories = () => {
@@ -31,12 +33,15 @@ const useFetchStories = () => {
                     const res = await fetch(`https://hacker-news.firebaseio.com/v0/item/${storyId}.json`);
                     const singleStory = await res.json();
                 
-                    const keywords = await extractKeywordsSpacy(singleStory.title);
+                    const keywords = await extractKeywords(singleStory.title);
+                    const keywordToSearch = Object.keys(keywords?.keyword || 'architecture')[0];
+                    console.log(keywordToSearch);
 
+                    const photoUrl = await fetchStockPhotos(keywordToSearch);
+                    
                     const authorRes = await fetch(`https://hacker-news.firebaseio.com/v0/user/${singleStory.by}.json`);
                     const author = await authorRes.json();
 
-                    console.log(keywords, 'tester')
                     return {
                         title: singleStory.title,
                         url: singleStory.url, 
@@ -45,11 +50,12 @@ const useFetchStories = () => {
                         author: author.id, 
                         karma: author.karma,
                         keywords: keywords, 
+                        photoUrl
                     }
                 });
 
                 const topStories: any = await Promise.all(getStories)
-
+                
                 const sortedTopStories = topStories.sort((a:any, b:any) => a.score - b.score);
                 if (sortedTopStories.length > 0) {
                     setFeaturedStory(topStories[0]);

@@ -10,25 +10,23 @@ import { CardContent, CardImage, CardWrapper } from './card.styled'
 import { DatePublished, Flex } from '@/app/global.styled'
 import { Typography } from '../Typography/Typography'
 
-// Assets
-import cardImage from '../../../../public/landing-header.jpg'
-
 interface types {
     author: string, 
     karma: number, 
     title: string,
     score: number,
     url: string,
-    date: string | null 
+    photo: string,
+    date: string | null
   }
 
-const Card: React.FC<types> = ({date, author, karma, title, score, url}) => {
+const Card: React.FC<types> = ({date, author, karma, title, score, url, photo}) => {
     return (
             <a href={url} target="_blank" className="card-link">
         <CardWrapper>
             <CardImage>
                 <DatePublished absolute>{date}</DatePublished>
-                <Image src={cardImage} fill objectFit='cover' alt="Card background image" />
+                <Image src={photo} fill objectFit='cover' alt="Card background image" />
             </CardImage>
             <CardContent>
                 <div>

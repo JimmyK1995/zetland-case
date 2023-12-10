@@ -9,19 +9,17 @@ import { HeaderContainer, HeaderContent, HeaderWrapper, ArticleScore, FeaturedAr
 import { Flex, PrimaryButton, DatePublished } from '@/app/global.styled'
 import { Typography } from '../Typography/Typography'
 
-// Assets
-import HeaderImage from '../../../../public/landing-header.jpg';
-
 interface types {
   author: string, 
   karma: number, 
   title: string,
   score: number,
-  url: string
+  url: string,
+  photo: string,
   date: string | null
 }
 
-const Header: React.FC<types> = ({date, author, karma, title, score, url}) => {
+const Header: React.FC<types> = ({date, author, karma, title, score, url, photo}) => {
   return (
     <HeaderWrapper>
       <HeaderContainer>
@@ -42,7 +40,7 @@ const Header: React.FC<types> = ({date, author, karma, title, score, url}) => {
       <Image 
         fill
         objectFit="cover"
-        src={HeaderImage}
+        src={photo}
         alt="Female sitting on a couch, reading news on her smartphone"
         />
     </HeaderWrapper>

@@ -1,6 +1,10 @@
-const axios = require("axios").default;
+// Axios
+import axios from "axios";
 
-export async function extractKeywordsSpacy(title: string) {
+// TwinWord
+const APIkey = '606fda0212msh44f0046f088eb36p1ea843jsnf582830f7d70'
+
+export async function extractKeywords(title: string) {
     const encodedParams = new URLSearchParams();
     encodedParams.set('text', title);
     
@@ -9,7 +13,7 @@ export async function extractKeywordsSpacy(title: string) {
         url: 'https://twinword-topic-tagging.p.rapidapi.com/generate/',
         headers: {
           'content-type': 'application/x-www-form-urlencoded',
-          'X-RapidAPI-Key': '606fda0212msh44f0046f088eb36p1ea843jsnf582830f7d70',
+          'X-RapidAPI-Key': APIkey,
           'X-RapidAPI-Host': 'twinword-topic-tagging.p.rapidapi.com'
         },
         data: encodedParams,
