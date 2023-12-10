@@ -8,8 +8,10 @@ height: 94px;
 align-items: center;
 img {
     height: calc(100% - 48px); 
+    width: auto;
     width: fit-content;
     border-radius: 10px;
+    object-fit: contain;
 
 }
 `

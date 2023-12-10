@@ -14,6 +14,7 @@ position: relative;
 img {
     border-radius: 10px; 
     z-index: -2;
+    object-fit: cover; 
 }
 &::after {
     content: '';

@@ -13,7 +13,7 @@ import zetlandLogo from '../../../../public/zetland-logo.svg'
 const Nav = () => {
   return (
       <NavWrapper>
-          <Image src={zetlandLogo} objectFit="contain" alt="Zetland new logo" />
+          <Image src={zetlandLogo} alt="Zetland new logo" />
       </NavWrapper>
   )
 }

@@ -16,22 +16,23 @@ interface types {
   score: number,
   url: string,
   photo: string,
+  alt: string, 
   date: string | null
 }
 
-const Header: React.FC<types> = ({date, author, karma, title, score, url, photo}) => {
+const Header: React.FC<types> = ({date, author, karma, title, score, url, photo, alt}) => {
   return (
     <HeaderWrapper>
       <HeaderContainer>
         <HeaderContent>
           <DatePublished>{date}</DatePublished>
-          <Flex gap={20}>
+          <Flex $gap={20}>
             <Typography tag="p">Author: {author}</Typography>
             <Typography tag="p">Karma: {karma}</Typography>
           </Flex>
-          <Typography tag="h1" small>{title}</Typography>
+          <Typography tag="h1" $small>{title}</Typography>
           <a href={url} target="_blank">
-            <PrimaryButton mt={30}>Read article</PrimaryButton>
+            <PrimaryButton $mt={30}>Read article</PrimaryButton>
             </a>
         </HeaderContent>
       <ArticleScore>Article score: {score}</ArticleScore>
@@ -39,9 +40,8 @@ const Header: React.FC<types> = ({date, author, karma, title, score, url, photo}
       </HeaderContainer>
       <Image 
         fill
-        objectFit="cover"
         src={photo}
-        alt="Female sitting on a couch, reading news on her smartphone"
+        alt={alt}
         />
     </HeaderWrapper>
   )

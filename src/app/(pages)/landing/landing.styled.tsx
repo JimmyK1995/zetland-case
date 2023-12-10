@@ -23,6 +23,7 @@ position: relative;
 }
 img {
     object-position: 58%;
+    object-fit: cover; 
     z-index: -2; 
     transform: scale(1.2);
     animation: animated 40s infinite forwards; 
@@ -43,11 +44,24 @@ img {
 export const HeaderContent = styled.div`
 margin-bottom: 125px; 
 max-width: 340px;
+opacity: 0;
 @media (min-width: 576px) {
 max-width: 540px; 
 }
 @media (min-width: 1600px) {
     margin-bottom: 240px; 
+}
+
+animation: anim .5s ease forwards; 
+animation-delay: 3.5s; 
+
+@keyframes anim {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1; 
+    }
 }
 `
 

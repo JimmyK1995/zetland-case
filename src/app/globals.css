@@ -15,6 +15,9 @@ a {
     text-decoration: none;
 }
 
+.card-link {
+    width: 100%; 
+}
 @media (min-width: 992px) {
     .card-link {
         width: calc(50% - 15px); 

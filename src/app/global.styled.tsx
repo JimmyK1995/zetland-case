@@ -3,11 +3,11 @@
 import styled from "styled-components";
 
 interface styleProps {
-    mt?: number
+    $mt?: number
     backgroundColor?: string | number,
-    gap?: number,
-    justify?: string,
-    absolute?: boolean
+    $gap?: number,
+    $justify?: string,
+    $absolute?: boolean
 }
 
 export const Container = styled.div`
@@ -36,7 +36,7 @@ border-radius: 5px;
 cursor: pointer; 
 border: 2px solid transparent;
 transition: .5s ease;
-margin-top: ${props => props.mt ? `${props.mt}px` : null};
+margin-top: ${props => props.$mt ? `${props.$mt}px` : null};
 
 &:hover {
     background-color: transparent; 
@@ -75,9 +75,9 @@ position: relative;
 
 export const Flex = styled.div<styleProps>`
 display: flex; 
-margin-top: ${props => props.mt ? `${props.mt}px` : null}; 
-gap: ${props => props.gap ? `${props.gap}px` : null};
-justify-content: ${props => props.justify ? props.justify : null}; 
+margin-top: ${props => props.$mt ? `${props.$mt}px` : null}; 
+gap: ${props => props.$gap ? `${props.$gap}px` : null};
+justify-content: ${props => props.$justify ? props.$justify : null}; 
 `
 
 export const DatePublished = styled.div<styleProps>`
@@ -93,7 +93,7 @@ color: white;
 font-family: 'Poppins', sans-serif;
 font-weight: 600;
 margin-bottom: 12px; 
-${props => props.absolute && `
+${props => props.$absolute && `
 position: absolute;
 left: 24px; 
 top: 24px;

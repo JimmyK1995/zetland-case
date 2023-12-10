@@ -12,7 +12,13 @@ export default async function fetchStockPhotos(keyword: string) {
   try {
     const response = await client.photos.search({ query, orientation, per_page: 1 }) as any;
     const photo = response.photos[0];
-    return photo ? photo.src.large : null;
+
+    const photoData = {
+      url: photo ? photo.src.large : null,
+      alt: photo ? (photo.alt || null) : null,
+    };
+
+    return photoData;
   } catch (error) {
     console.error('Error fetching stock photos:', error);
     return null;

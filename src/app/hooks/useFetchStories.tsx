@@ -14,7 +14,8 @@ interface types {
     score: number;
     author: string;
     karma: number;
-    photoUrl: string
+    photoUrl: string, 
+    photoAlt: string
 }
 
 const useFetchStories = () => {
@@ -35,10 +36,9 @@ const useFetchStories = () => {
                 
                     const keywords = await extractKeywords(singleStory.title);
                     const keywordToSearch = Object.keys(keywords?.keyword || 'architecture')[0];
-                    console.log(keywordToSearch);
 
-                    const photoUrl = await fetchStockPhotos(keywordToSearch);
-                    
+                    const photoData = await fetchStockPhotos(keywordToSearch);
+    
                     const authorRes = await fetch(`https://hacker-news.firebaseio.com/v0/user/${singleStory.by}.json`);
                     const author = await authorRes.json();
 
@@ -50,7 +50,8 @@ const useFetchStories = () => {
                         author: author.id, 
                         karma: author.karma,
                         keywords: keywords, 
-                        photoUrl
+                        photoUrl: photoData?.url,
+                        photoAlt: photoData?.alt,
                     }
                 });
 
@@ -72,7 +73,7 @@ const useFetchStories = () => {
     fetchStories();
     }, [])
 
-    return { stories, featuredStory } 
+    return { stories, featuredStory, loading } 
 }
 
 export default useFetchStories;

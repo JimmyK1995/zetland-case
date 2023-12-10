@@ -27,6 +27,7 @@ img {
 border-radius: 10px 10px 0 0;
 transition: .5s ease; 
 object-position: top;
+object-fit: cover; 
 }
 `
 
@@ -40,6 +41,8 @@ justify-content: space-between;
 `
 
 export const CardFlex = styled.div`
+@media (min-width: 992px) {
 display: flex; 
 flex-wrap: wrap; 
+}
 `

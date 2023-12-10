@@ -1,4 +1,3 @@
-
 Zetland Challenge - Reflections and Insights
 
 React StrictMode and Rendering Duplication:
@@ -13,7 +12,7 @@ My primary emphasis in this project revolved around showcasing my proficiency in
 Time Constraints and Future Considerations:
 Given more time, I would address the following areas:
 
-Design System: Develop a comprehensive design system, potentially incorporating Tailwind (while I'm currently more comfortable with Bootstrap).
+Design System: Develop a comprehensive design system, potentially incorporating Tailwind (while I'm more comfortable with Styled components and Bootstrap).
 
 Type Safety: Implement proper types throughout the codebase, minimizing the use of 'any' and ensuring robust type definitions.
 
@@ -21,10 +20,12 @@ Animations: Allocate time for incorporating animations to enhance the user inter
 
 Test-Driven Development (TDD): In a larger project, I'd adopt TDD practices, writing unit and integration tests before the actual code implementation.
 
-Pexels Data Fetching Improvements:
+API keys: Stored more secure. 
 
-Enhance the keyword API or explore alternatives.
+Pexels Data Fetching Improvements: Enhance the keyword API or explore alternatives.
 Implement a mechanism to filter out overly niche keywords by checking the number of available photos. If below a threshold, switch to a more general keyword.
+Console warnings Largest Contentful Paint. 
+
 Alternative Case Idea for Zetland:
 To enhance Zetland's product, consider integrating two additional steps into the onboarding process:
 

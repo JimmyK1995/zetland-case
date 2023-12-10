@@ -16,16 +16,16 @@ import { NewsContainer, NewsContent } from './news.styled';
 import { Typography } from '@/app/components/Typography/Typography';
 import { CardFlex } from '@/app/components/Card/card.styled';
 import Footer from '@/app/components/Footer/Footer';
+import Loading from '@/app/components/Loading/Loading';
 
 const News: React.FC = () => {
 
-  const { stories, featuredStory } = useFetchStories();
-
-  console.log(stories);
+  const { stories, featuredStory, loading } = useFetchStories();
 
   return (
     <>
-    <Container>
+      <Loading hide={!loading} />
+<Container>
       <Nav />
       {featuredStory && (
         <Header
@@ -36,12 +36,13 @@ const News: React.FC = () => {
           date={new Date(featuredStory.timestamp * 1000).toLocaleDateString('en-GB').replace(/\//g, '.')}
           url={featuredStory.url}
           photo={featuredStory.photoUrl}
+          alt={featuredStory.photoAlt}
         />
       )}
       <NewsContainer>
         <NewsContent>
           <Typography tag="h2" color="#222222" fontWeight={600}>Top stories</Typography>
-          <Typography tag="p" color="#222222" mtSM={15} opacity={0.8}>Welcome to “Top Stories,”
+          <Typography tag="p" color="#222222" $mtSM={15} opacity={0.8}>Welcome to “Top Stories,”
             where we curate the most compelling narratives based
             on our rigorous scoring system. Unveiling the pulse of
             trending topics, this section showcases the highest-rated
@@ -61,6 +62,7 @@ const News: React.FC = () => {
               date={new Date(story.timestamp * 1000).toLocaleDateString('en-GB').replace(/\//g, '.')}
               url={story.url}
               photo={story.photoUrl}
+              alt={story.photoAlt}
                />
           ))}
         </CardFlex>
@@ -68,7 +70,7 @@ const News: React.FC = () => {
     </Container>
     <Footer />
     </>
-  )
-}
+    )}
+
 
 export default News;

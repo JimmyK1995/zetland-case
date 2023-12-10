@@ -10,6 +10,7 @@ justify-content: center;
 width: 100%; 
 img {
     height: 50%; 
+    width: auto; 
     border-radius: 10px; 
 }
 `
