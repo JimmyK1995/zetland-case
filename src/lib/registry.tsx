@@ -1,7 +1,11 @@
 'use client'
- 
+ // React
 import React, { useState } from 'react'
+
+// Next
 import { useServerInsertedHTML } from 'next/navigation'
+
+// Styled
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
  
 export default function StyledComponentsRegistry({

@@ -7,10 +7,11 @@ interface styleProps {
     backgroundColor?: string | number,
     $gap?: number,
     $justify?: string,
-    $absolute?: boolean
+    $absolute?: boolean,
+    $noMaxWidth?: boolean
 }
 
-export const Container = styled.div`
+export const Container = styled.div<styleProps>`
 margin: 0 30px; 
 position: relative;
 @media (min-width: 992px) {
@@ -20,8 +21,10 @@ position: relative;
     margin: 0 150px; 
 }
 @media (min-width: 1920px) {
+    ${props => !props.$noMaxWidth && `
 max-width: 1620px;
 margin: 0 auto !important;
+    `}
 }
 `
 
@@ -37,7 +40,7 @@ cursor: pointer;
 border: 2px solid transparent;
 transition: .5s ease;
 margin-top: ${props => props.$mt ? `${props.$mt}px` : null};
-
+outline: none; 
 &:hover {
     background-color: transparent; 
     border: 2px solid #40CB76;

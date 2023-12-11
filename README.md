@@ -7,7 +7,7 @@ Project Overview:
 I crafted a news application comprising a landing page and a dedicated news page. The app dynamically generates images using the Pexels API, leveraging topic tagging. The process involves fetching data from Newshacker, extracting titles, determining keywords, and querying the Pexels API accordingly. The information is presented only when all data has been successfully fetched, facilitated by the Promise.all method.
 
 Focused Areas:
-My primary emphasis in this project revolved around showcasing my proficiency in React structure, hook utilization, and data fetching. I intentionally kept styling, types, and animations to the basics. The design aspect was crucial to demonstrate my ability to translate a visual design into a fully functional application, highlighting attention to detail.
+My primary emphasis in this project revolved around showcasing my proficiency in React structure, hook utilization, and data fetching. I intentionally kept styling, types, and animations to the basics. The design aspect was crucial to demonstrate my ability to translate a visual design into a fully functional site, highlighting attention to detail.
 
 Time Constraints and Future Considerations:
 Given more time, I would address the following areas:
@@ -18,13 +18,15 @@ Type Safety: Implement proper types throughout the codebase, minimizing the use 
 
 Animations: Allocate time for incorporating animations to enhance the user interface's fluidity.
 
-Test-Driven Development (TDD): In a larger project, I'd adopt TDD practices, writing unit and integration tests before the actual code implementation.
+Test-Driven Development (TDD): In a larger project, I'd adopt TDD practices, writing unit and integration tests before the actual code implementation. I would throughouly write tests for components and pages.
 
 API keys: Stored more secure. 
 
 Pexels Data Fetching Improvements: Enhance the keyword API or explore alternatives.
 Implement a mechanism to filter out overly niche keywords by checking the number of available photos. If below a threshold, switch to a more general keyword.
-Console warnings Largest Contentful Paint. 
+Find a way to fix Console warnings Largest Contentful Paint. 
+With more time, I would probably find a better API to target topics, or try to code my own, but for this project it was a fun way of not using generic stock photos 100% unrelated to the randomly generated article topics - Even though the stock photos generated often are... pretty random. 
+
 
 Alternative Case Idea for Zetland:
 To enhance Zetland's product, consider integrating two additional steps into the onboarding process:

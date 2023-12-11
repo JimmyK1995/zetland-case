@@ -3,6 +3,7 @@ import React from 'react'
 
 // Next
 import Image from 'next/image'
+import Link from 'next/link'
 
 // Styled components
 import { NavWrapper } from './nav.styled'
@@ -13,7 +14,7 @@ import zetlandLogo from '../../../../public/zetland-logo.svg'
 const Nav = () => {
   return (
       <NavWrapper>
-          <Image src={zetlandLogo} alt="Zetland new logo" />
+          <Link href="/"><Image src={zetlandLogo} alt="Zetland new logo" /></Link>
       </NavWrapper>
   )
 }

@@ -55,9 +55,9 @@ const useFetchStories = () => {
                     }
                 });
 
-                const topStories: any = await Promise.all(getStories)
+                const topStories: types[] = await Promise.all(getStories)
                 
-                const sortedTopStories = topStories.sort((a:any, b:any) => a.score - b.score);
+                const sortedTopStories = topStories.sort((a:types, b:types) => a.score - b.score);
                 if (sortedTopStories.length > 0) {
                     setFeaturedStory(topStories[0]);
                 }

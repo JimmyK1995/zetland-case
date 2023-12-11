@@ -15,7 +15,7 @@ export default async function fetchStockPhotos(keyword: string) {
 
     const photoData = {
       url: photo ? photo.src.large : null,
-      alt: photo ? (photo.alt || null) : null,
+      alt: photo ? photo.alt : null,
     };
 
     return photoData;

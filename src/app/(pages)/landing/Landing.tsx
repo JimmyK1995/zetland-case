@@ -21,7 +21,7 @@ const LandingPage: React.FC = () => {
     <>
     <Splash />
     <HeaderWrapper>
-      <Container>
+      <Container $noMaxWidth>
         <HeaderContent>
           <Typography tag="h2">Zetland</Typography>
           <Typography tag="h1" $mtSM={-8} $mtMD={-12}>News challenge</Typography>
@@ -29,9 +29,8 @@ const LandingPage: React.FC = () => {
           which is developed using Next.js for the frontend, styled-components for styling, 
           and Jest for testing. This project serves as my entry into the challenges or 
           opportunities presented by Zetland</Typography>
-          <Flex $gap={20} $mt={50}>
+          <Flex $mt={50}>
          <Link href="/news"><PrimaryButton>News page</PrimaryButton></Link>
-          <TransparentButton>Prototype extra</TransparentButton>
           </Flex>
         </HeaderContent>
       <HeaderByLine>
