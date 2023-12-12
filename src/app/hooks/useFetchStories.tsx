@@ -6,14 +6,13 @@ import { useEffect, useState } from "react";
 import { extractKeywords } from "../utils/keywordExtractor";
 import fetchStockPhotos from "../utils/fetchPexels";
 
-
 interface types {
-    title: string;
-    url: string;
-    timestamp: number;
-    score: number;
-    author: string;
-    karma: number;
+    title: string,
+    url: string,
+    timestamp: number,
+    score: number,
+    author: string,
+    karma: number,
     photoUrl: string, 
     photoAlt: string
 }
