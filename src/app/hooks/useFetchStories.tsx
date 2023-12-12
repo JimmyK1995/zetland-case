@@ -34,7 +34,9 @@ const useFetchStories = () => {
                     const singleStory = await res.json();
                 
                     const keywords = await extractKeywords(singleStory.title);
-                    const keywordToSearch = await ((keywords?.keyword && Object.keys(keywords.keyword)[0]) || 'architecture');
+                    const keywordToSearch = await ((keywords?.keyword && Object.keys(keywords.keyword)[0]));
+
+                    console.log(keywordToSearch);
 
                     const photoData = await fetchStockPhotos(keywordToSearch);
     

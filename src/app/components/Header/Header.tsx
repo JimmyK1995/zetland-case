@@ -38,11 +38,11 @@ const Header: React.FC<types> = ({date, author, karma, title, score, url, photo,
       <ArticleScore>Article score: {score}</ArticleScore>
       <FeaturedArticle>Featured article</FeaturedArticle>
       </HeaderContainer>
-      <Image 
+      {photo && <Image 
         fill
         src={photo}
         alt={alt}
-        />
+        />}
     </HeaderWrapper>
   )
 }

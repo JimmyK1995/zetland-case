@@ -27,7 +27,7 @@ const Card: React.FC<types> = ({date, author, karma, title, score, url, photo, a
         <CardWrapper>
             <CardImage>
                 <DatePublished $absolute>{date}</DatePublished>
-                <Image src={photo} fill alt={alt} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                {photo && <Image src={photo} fill alt={alt} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />}
             </CardImage>
             <CardContent>
                 <div>
