@@ -1,4 +1,4 @@
-Zetland Challenge - Reflections and Insights
+Zetland case - Reflections and Insights
 
 React StrictMode and Rendering Duplication:
 I made a deliberate choice to turn off React StrictMode during development due to its tendency to render components twice, causing redundant API calls. While I typically prefer keeping it on for its helpful warnings, the rendering issue took precedence in this scenario.
